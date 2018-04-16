@@ -47,3 +47,27 @@ then below your form html code. Like so:
 
 <img src="imgs/phpcapture2.JPG">
 
+
+We can also go a step further and implement this code segment within the php form for even further protection. This statement is used for basically supporting any driver:
+
+```
+$stmt = $pdo->prepare('SELECT * FROM employees WHERE name = :name');
+
+$stmt->execute(array('name' => $name));
+
+foreach ($stmt as $row) {
+    // do something with $row
+}
+```
+Or use MYSQLi which is basically a class used as a representation of a connection between PHP and MYSQL:
+```
+$stmt = $dbConnection->prepare('SELECT * FROM employees WHERE name = ?');
+$stmt->bind_param('s', $name); // 's' specifies the variable type => 'string'
+
+$stmt->execute();
+
+$result = $stmt->get_result();
+while ($row = $result->fetch_assoc()) {
+    // do something with $row
+}
+```
