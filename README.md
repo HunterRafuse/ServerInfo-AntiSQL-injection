@@ -28,3 +28,22 @@ Just a little brushing up on Client, Server &amp; File info with PHP as well as 
    so:
    
    <img src="imgs/phpcapture1.JPG">
+
+This, as you can see, states the Host Server Name, Host Header, Software the Server is currently using, Document Roots, Current Page, Script Name and the Absolute Path of the script. Next you can see the client side code where it states the clien system info, in this instance it is bringing up the Browser I am currently using which is stated as:```Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0 ```.  Next you see the IP as well as the Remote Port that is in use. Pretty simple code. Test it in your browser. Make sure XAMPP is installed and running as administrator. Then do ```localhost/filedirectory/filedirectory2/file.php```. Only put the ```file.php``` at the end if you are trying to render a specific file. 
+
+## Next we have a simple anti SQL injection code
+Normally when using GET requests in forms it pushes it to the browser's URL and everyone sees the information. Let's say someone wants to put, I don't know, a script of their own into your form the best practice is to get used to implementing ```isset``` in your if statements like this:
+
+
+```
+<?php
+if (isset($_GET['name'])) {
+  $name = htmlentities($_GET['name']);
+  echo $name;
+}
+?>
+```
+then below your form html code. Like so:
+
+<img src="imgs/phpcapture2.JPG">
+
