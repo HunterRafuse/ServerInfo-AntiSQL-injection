@@ -51,7 +51,7 @@ then below your form html code. Like so:
 We can also go a step further and implement this code segment within the php form for even further protection. This statement is used for basically supporting any driver:
 
 ```
-$stmt = $pdo->prepare('SELECT * FROM employees WHERE name = :name');
+$stmt = $pdo->prepare('SELECT * FROM example WHERE name = :name');
 
 $stmt->execute(array('name' => $name));
 
@@ -61,7 +61,7 @@ foreach ($stmt as $row) {
 ```
 Or use MYSQLi which is basically a class used as a representation of a connection between PHP and MYSQL:
 ```
-$stmt = $dbConnection->prepare('SELECT * FROM employees WHERE name = ?');
+$stmt = $dbConnection->prepare('SELECT * FROM example WHERE name = ?');
 $stmt->bind_param('s', $name); // 's' specifies the variable type => 'string'
 
 $stmt->execute();
