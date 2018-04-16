@@ -27,4 +27,4 @@ Just a little brushing up on Client, Server &amp; File info with PHP as well as 
    this as a base for any project you may have but it's just to review server info code which is important to know. It should look like
    so:
    
-   <img src="imgs/phpcapture1.jpeg">
+   <img src="imgs/phpcapture1.JPG">
