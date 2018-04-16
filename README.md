@@ -71,3 +71,14 @@ while ($row = $result->fetch_assoc()) {
     // do something with $row
 }
 ```
+Also for error reporting, easiest thing to do is to navigate to your php.ini file and make sure ERROR REPORTING is enabled. If you cannot access that or just want the error of a specific page just implement this piece below:
+```
+string ini_set('display_errors', '1');
+```
+
+Do not set it to 0. Follow this simple key for error reporting:
+On = 1
+Off = 0
+
+## You are good to go!
+Might add some other things as I go along but for now I will leave it at this.
